@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title%}
+Товари та послуги
+{% endblock %}
+
+
+{% block body%}
+<h1 class="display-4" style="margin-left: 40%">Послуги</h1>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for p in products%}
+       <div class="col">
+          <div class="card shadow-sm">
+            <svg class="product_description bd-placeholder-img card-img-top bg-dark" width="100%" height="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" ></rect><text x="5%" y="60%" fill="#eceeef" >{{p.subject}}</text></svg>
+            <div class="card-body">
+              <p class="card-text">Викладач: {{p.pib}}</p>
+              <p class="card-text">Кількість курсів: {{p.course}}</p>
+              <p class="card-text">Результати: {{p.task}}</p>
+
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

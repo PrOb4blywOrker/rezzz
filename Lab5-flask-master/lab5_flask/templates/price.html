@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Прайс-лист
+{% endblock %}
+
+{% block body %}
+<div class="container">
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center ">
+  <h1 class="display-4">Розцінки</h1>
+  <p class="lead">Оберіть курс, який Вам потрібен.</p>
+</div>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 ">
+  {% for n in post %}
+    <div class="card mb-4 shadow-sm ">
+      <div class="card-header text-white bg-dark ">
+        <h4 class="my-0 font-weight-normal "style="color:#ffffff">{{n.name}}</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{n.price}} <small class="text-muted">/ на місяць</small></h1>
+
+        <button type="button" onclick="window.location.href = '/about';" class="prc btn btn-lg btn-block btn-primary">{{n.contact}}</button>
+      </div>
+    </div>
+  {% endfor %}
+
+  </div>
+</div>
+{% endblock %}
